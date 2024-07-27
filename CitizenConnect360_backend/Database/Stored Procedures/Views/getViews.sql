@@ -1,0 +1,7 @@
+USE CitizenConnect;
+GO
+CREATE OR ALTER PROCEDURE getViews
+AS
+BEGIN
+    SELECT * FROM Views WHERE isDeleted = 0
+END

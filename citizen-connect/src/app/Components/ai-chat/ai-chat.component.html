@@ -1,0 +1,25 @@
+<div class="ai-chat-container">
+  <h1>{{ documentTitle }} GPT</h1>
+  <div class="chat-ui">
+    <div class="model-switch">
+      <button [class.active]="model === 'gpt-3.5'" (click)="switchModel('gpt-3.5')">GPT-3.5</button>
+      <button [class.active]="model === 'gpt-4'" (click)="switchModel('gpt-4')">GPT-4</button>
+    </div>
+    <div class="chat-window">
+      <div *ngFor="let message of messages" class="chat-message" [ngClass]="{'user-message': message.sender === 'User', 'ai-message': message.sender === 'AI'}">
+        <p>{{ message.content }}</p>
+      </div>
+    </div>
+    <div class="chat-input">
+      <input type="text" [(ngModel)]="userMessage" placeholder="Send a message"/>
+      <button (click)="sendMessage()">Submit</button>
+    </div>
+  </div>
+  <div class="chat-history">
+    <h2>Chat History</h2>
+    <div *ngFor="let history of chatHistory">
+      <p><strong>User:</strong> {{ history.user }}</p>
+      <p><strong>AI:</strong> {{ history.ai }}</p>
+    </div>
+  </div>
+</div>

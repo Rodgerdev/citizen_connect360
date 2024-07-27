@@ -1,0 +1,7 @@
+USE CitizenConnect;
+GO
+CREATE OR ALTER PROCEDURE getPolls
+AS
+BEGIN
+    SELECT * FROM Polls WHERE isDeleted = 0
+END

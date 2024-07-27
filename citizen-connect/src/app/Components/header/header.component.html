@@ -1,0 +1,31 @@
+<header>
+  <div class="logo">
+    <div class="logo-lines">
+      <div class="line line1"></div>
+      <div class="line line2"></div>
+      <div class="line line3"></div>
+    </div>
+    <span>CitizenConnect360</span>
+  </div>
+  <nav *ngIf="isLoggedIn$ | async as isLoggedIn">
+    <ng-container *ngIf="user$ | async as user">
+      <ul *ngIf="isLoggedIn">
+        <li><a routerLink="/home">Home</a></li>
+        <li *ngIf="user.role === 'citizen'"><a routerLink="/educate">Educate</a></li>
+        <li *ngIf="user.role === 'citizen'"><a routerLink="/views">Views</a></li>
+        <li *ngIf="user.role === 'citizen'"><a routerLink="/incidents">Incidents</a></li>
+        <li *ngIf="user.role === 'citizen'"><a routerLink="/polls">Polls</a></li>
+        <li *ngIf="user.role === 'government'"><a routerLink="/dashboard">Dashboard</a></li>
+        <li *ngIf="user.role === 'government'"><a routerLink="/views">Views</a></li>
+        <li *ngIf="user.role === 'government'"><a routerLink="/incidents">Incidents</a></li>
+        <li *ngIf="user.role === 'government'"><a routerLink="/polls">Polls</a></li>
+        <li *ngIf="user.role === 'admin'"><a routerLink="/pending-approvals">Pending Approvals</a></li>
+        <li *ngIf="user.role === 'admin'"><a routerLink="/all-users">All Users</a></li>
+      </ul>
+    </ng-container>
+  </nav>
+  <button *ngIf="isLoggedIn$ | async" (click)="onLogout()">Log out</button>
+  <ng-template #signIn>
+    <button routerLink="/login">Sign in</button>
+  </ng-template>
+</header>

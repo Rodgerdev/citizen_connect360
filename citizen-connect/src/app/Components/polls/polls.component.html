@@ -1,0 +1,30 @@
+<div class="polls-container">
+  <div class="header">
+    <h1>These are the currently ongoing polls:</h1>
+    <button *ngIf="userRole === 'government'" class="add-poll-button" (click)="showAddPollPopup()">Add Poll</button>
+  </div>
+  <div class="poll" *ngFor="let poll of polls">
+    <h2>{{ poll.question }}</h2>
+    <ul>
+      <li *ngFor="let option of poll.options" class="option">
+        <button (click)="vote(poll.id, option.id)" [class.selected]="option.selected">{{ option.text }}</button>
+        <span>{{ option.votes }} votes</span>
+      </li>
+    </ul>
+    <button *ngIf="userRole === 'government'" class="delete-button" (click)="deletePoll(poll.id)">Delete</button>
+  </div>
+
+  <!-- Add Poll Popup -->
+  <div *ngIf="isAddPollPopupVisible" class="popup">
+    <div class="popup-content">
+      <h2>Add New Poll</h2>
+      <input [(ngModel)]="newPollQuestion" placeholder="Poll Question">
+      <div *ngFor="let option of newPollOptions; let i = index">
+        <input [(ngModel)]="newPollOptions[i]" placeholder="Option {{i + 1}}">
+      </div>
+      <button (click)="addPollOption()">Add Option</button>
+      <button (click)="submitPoll()">Submit</button>
+      <button (click)="closeAddPollPopup()">Cancel</button>
+    </div>
+  </div>
+</div>

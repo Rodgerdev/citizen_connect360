@@ -1,0 +1,34 @@
+<div class="views-container">
+   <!-- Citizen Add View Button -->
+   <button *ngIf="userRole === 'citizen'" class="add-view-button" (click)="showAddViewPopup()">Add View</button><br>
+  <h1>These are the views posted by other citizens on the platform:</h1>
+  <div class="views-content">
+    <div class="views-list">
+      <div class="view" *ngFor="let view of views$ | async">
+        <h2>{{ view.userName }}</h2>
+        <p>{{ view.description }}</p>
+      </div>
+    </div>
+    
+    <!-- Government Official Section -->
+    <div *ngIf="userRole === 'government'" class="summary-section">
+      <button class="summarize-button" (click)="summarizeViews()">Summarize Views with AI</button>
+      <div class="summary-content" *ngIf="summary">
+        <h2>Summary of Views</h2>
+        <p>{{ summary }}</p>
+      </div>
+    </div>
+  </div>
+
+ 
+
+  <!-- Add View Popup -->
+  <div *ngIf="isPopupVisible" class="popup">
+    <div class="popup-content">
+      <h2>Add Your View</h2>
+      <textarea [(ngModel)]="newViewMessage" placeholder="Enter your view"></textarea>
+      <button (click)="submitView()">Submit</button>
+      <button (click)="closeAddViewPopup()">Cancel</button>
+    </div>
+  </div>
+</div>

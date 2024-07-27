@@ -1,0 +1,128 @@
+.incidents-container {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #F4337A;
+}
+
+.incidents-list {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.incident {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 40%;
+}
+
+.incident h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.2em;
+}
+
+.incident p {
+  margin: 0 0 10px 0;
+  color: #666;
+}
+
+.multimedia {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.multimedia img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.add-incident-button {
+  padding: 10px 20px;
+  background-color: #2E8DDE;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  align-self: flex-end;
+}
+
+.summary-section {
+  margin-top: 20px;
+}
+
+.summarize-button {
+  padding: 10px 20px;
+  background-color: #F4337A;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  align-self: flex-end;
+}
+
+.summary {
+  margin-top: 20px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-content h2 {
+  margin-bottom: 20px;
+  color: #F4337A;
+}
+
+.popup-content label {
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.popup-content textarea,
+.popup-content input[type="file"] {
+  margin-bottom: 20px;
+}
+
+.popup-content button {
+  padding: 10px 20px;
+  background-color: #2E8DDE;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  align-self: flex-end;
+  margin-bottom: 10px;
+}
+
+.popup-content button:last-child {
+  background-color: #F4337A;
+}

@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="form-container">
+    <h1>Welcome back!</h1>
+    <p>Enter your Credentials to access your account</p><br>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <label for="email">Email address</label>
+      <input id="email" type="email" formControlName="email" placeholder="Enter your email" />
+
+      <div class="password-container">
+        <label for="password">Password</label>
+        <a routerLink="/forgot-password" class="forgot-password">forgot password</a>
+      </div>
+      <input id="password" type="password" formControlName="password" placeholder="Enter your password" />
+
+      <button type="submit" [disabled]="!loginForm.valid">Login</button>
+    </form>
+
+    <div class="or-divider">or</div>
+
+    <button class="google-signin">Sign in with Google</button>
+    
+    <div class="signup-link">
+      <a routerLink="/signup">Don't have an account? Sign Up</a>
+    </div>
+  </div>
+  <div class="image-container">
+    <img src="https://cdn.pixabay.com/photo/2013/05/20/05/34/human-112227_1280.jpg" alt="People and barcode" />
+  </div>
+</div>

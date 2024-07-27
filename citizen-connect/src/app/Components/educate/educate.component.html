@@ -1,0 +1,10 @@
+<div class="educate-container">
+  <h1>Select the Government document you want to educate yourself on.</h1>
+  <div class="documents">
+    <div class="document" *ngFor="let document of documents$ | async">
+      <h2>{{ document.title }}</h2>
+      <p>{{ document.description }}</p>
+      <button (click)="goToChat(document.title)">Chat about this document</button>
+    </div>
+  </div>
+</div>

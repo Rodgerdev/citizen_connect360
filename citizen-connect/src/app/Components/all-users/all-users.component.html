@@ -1,0 +1,11 @@
+<div class="users-container">
+  <h1>All users of the system:</h1>
+  <div class="users">
+    <div class="user" *ngFor="let SystemUser of SystemUsers">
+      <img [src]="SystemUser.imageUrl" alt="{{ SystemUser.name }}">
+      <h2>{{ SystemUser.name }}</h2>
+      <p>{{ SystemUser.email }}</p>
+      <button>Delete</button>
+    </div>
+  </div>
+</div>

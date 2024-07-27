@@ -1,0 +1,220 @@
+### User Registration
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "name": "Ndemo Admin",
+  "email": "ndemo.rodgers20@students.ac.ke",
+  "password": "password123",
+  "role": "admin"
+}
+
+### User Login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "ndemorodgers77@gmail.com",
+  "password": "password123"
+}
+
+### Forgot Password
+POST http://localhost:3000/auth/forgot-password
+Content-Type: application/json
+
+{
+  "email": "ndemorodgers77@gmail.com"
+}
+
+### Reset Password
+POST http://localhost:3000/reset-password
+Content-Type: application/json
+
+{
+  "token": "<JWT_TOKEN>",
+  "newPassword": "newpassword123"
+}
+
+### Get All Users
+GET http://localhost:3000/auth/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiIzMmRlZGE0ZS01ZjMzLTQ0MWEtYjk5NC00ZDhmZWNlNzExY2IiLCJOYW1lIjoiUm9kZ2VycyBOZGVtbyIsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxOTAxODE1LCJleHAiOjE3MjE5MDU0MTV9.z6hRfOTUxy9fXl61OQYnkT5cM9S4kFhmhHEYSTCoIJ8
+
+### Get Single User
+GET http://localhost:3000/auth/users/32deda4e-5f33-441a-b994-4d8fece711cb
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiIzMmRlZGE0ZS01ZjMzLTQ0MWEtYjk5NC00ZDhmZWNlNzExY2IiLCJOYW1lIjoiUm9kZ2VycyBOZGVtbyIsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxOTAyODMzLCJleHAiOjE3MjE5MDY0MzN9.g18CgG1ZkPDdaeg2iPz-Djzo9bchMHwnB1eS_1Svvm4
+
+### Update User
+PUT http://localhost:3000/users/{userId}
+Authorization: Bearer <JWT_TOKEN>
+Content-Type: application/json
+
+{
+  "name": "John Updated",
+  "email": "john.updated@example.com",
+  "role": "citizen"
+}
+
+### Soft Delete User
+DELETE http://localhost:3000/auth/users/c00c0878-370e-4ef3-ac10-e2b99bfb48ad
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiIzMmRlZGE0ZS01ZjMzLTQ0MWEtYjk5NC00ZDhmZWNlNzExY2IiLCJOYW1lIjoiUm9kZ2VycyBOZGVtbyIsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNjM4NDEwLCJleHAiOjE3MjE2NDIwMTB9.I1lxo6EM1AGs-N-Yze4AHtpB7PI5pZn-GymvTxKnA2M
+
+### Add View
+POST http://localhost:3000/views
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiIzMmRlZGE0ZS01ZjMzLTQ0MWEtYjk5NC00ZDhmZWNlNzExY2IiLCJOYW1lIjoiUm9kZ2VycyBOZGVtbyIsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNjMxNjQxLCJleHAiOjE3MjE2MzUyNDF9.iOqcRg7xa-WPrpJo4o8uIv-BssgUqZ0hJgEMpQNA1Pg
+Content-Type: application/json
+
+{
+  "title": "Bread",
+  "description": "The cost of a loaf of bread should be reduced to at least 50 shillings"
+}
+
+### Get All Views
+GET http://localhost:3000/views
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiIwYTQyYTEzOC1mZmQ2LTRlMzYtODFkOS1hYzNiN2NjMTM1ZTQiLCJOYW1lIjoiTmRlbW8gUm9kZ2VycyIsImlzQWRtaW4iOjAsImlhdCI6MTcxOTY5MTk4OSwiZXhwIjoxNzE5Njk1NTg5fQ.cGr2QoG1KBnt32w_2png9DiQUSAISTJ5w513YGkezY4
+
+
+### Get Single View
+GET http://localhost:3000/views/bfd3d7c9-b6c5-4ba0-8094-7cb092e4fefc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiIzMmRlZGE0ZS01ZjMzLTQ0MWEtYjk5NC00ZDhmZWNlNzExY2IiLCJOYW1lIjoiUm9kZ2VycyBOZGVtbyIsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNDgyMDEzLCJleHAiOjE3MjE0ODU2MTN9.n1vNPgE4b_TJxdlqaEjnLCvEMteSn0ZZalsEj4t0w60
+
+### Update View
+PUT http://localhost:3000/views/bfd3d7c9-b6c5-4ba0-8094-7cb092e4fefc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiIzMmRlZGE0ZS01ZjMzLTQ0MWEtYjk5NC00ZDhmZWNlNzExY2IiLCJOYW1lIjoiUm9kZ2VycyBOZGVtbyIsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNTcwMTQyLCJleHAiOjE3MjE1NzM3NDJ9.ibfhoaIm42gCcp9AZayzavtMwrs3jPm0-GPyFNRnxys
+Content-Type: application/json
+
+{
+  "title": "My view 3",
+  "description": "The Police are using excessive force on unarmed protestors"
+}
+
+### Soft Delete View
+DELETE http://localhost:3000/views/c07bd6b3-fad5-4135-af81-0ec24b9dccfd
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiIzMmRlZGE0ZS01ZjMzLTQ0MWEtYjk5NC00ZDhmZWNlNzExY2IiLCJOYW1lIjoiUm9kZ2VycyBOZGVtbyIsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNDgyMDEzLCJleHAiOjE3MjE0ODU2MTN9.n1vNPgE4b_TJxdlqaEjnLCvEMteSn0ZZalsEj4t0w60
+
+### Add Incident
+POST http://localhost:3000/incidents
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiIzMmRlZGE0ZS01ZjMzLTQ0MWEtYjk5NC00ZDhmZWNlNzExY2IiLCJOYW1lIjoiUm9kZ2VycyBOZGVtbyIsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNjM4NDEwLCJleHAiOjE3MjE2NDIwMTB9.I1lxo6EM1AGs-N-Yze4AHtpB7PI5pZn-GymvTxKnA2M
+Content-Type: application/json
+
+{
+  "title": "Shooting of medical officers",
+  "description": "Some medical officers were shot at by the police"
+}
+
+### Get All Incidents
+GET http://localhost:3000/incidents
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiIzMmRlZGE0ZS01ZjMzLTQ0MWEtYjk5NC00ZDhmZWNlNzExY2IiLCJOYW1lIjoiUm9kZ2VycyBOZGVtbyIsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNDgyMDEzLCJleHAiOjE3MjE0ODU2MTN9.n1vNPgE4b_TJxdlqaEjnLCvEMteSn0ZZalsEj4t0w60
+
+### Get Single Incident
+GET http://localhost:3000/incidents/dfd743b7-385e-41f6-b351-2df3c135db58
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiIzMmRlZGE0ZS01ZjMzLTQ0MWEtYjk5NC00ZDhmZWNlNzExY2IiLCJOYW1lIjoiUm9kZ2VycyBOZGVtbyIsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNDgyMDEzLCJleHAiOjE3MjE0ODU2MTN9.n1vNPgE4b_TJxdlqaEjnLCvEMteSn0ZZalsEj4t0w60
+
+### Update Incident
+PUT http://localhost:3000/incidents/{incidentId}
+Authorization: Bearer <JWT_TOKEN>
+Content-Type: application/json
+
+{
+  "title": "Updated Incident",
+  "description": "This is my updated incident"
+}
+
+### Soft Delete Incident
+DELETE http://localhost:3000/incidents/{incidentId}
+Authorization: Bearer <JWT_TOKEN>
+
+### Add Poll
+POST http://localhost:3000/polls
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWIiOiIzMmRlZGE0ZS01ZjMzLTQ0MWEtYjk5NC00ZDhmZWNlNzExY2IiLCJOYW1lIjoiUm9kZ2VycyBOZGVtbyIsInJvbGUiOiJjaXRpemVuIiwiaWF0IjoxNzIxNDkyNzE2LCJleHAiOjE3MjE0OTYzMTZ9.UEHyFK2u33zHlm9dcYkPFNnm6xHdHFMLQs-iwfZFMPs
+Content-Type: application/json
+
+{
+  "question": "Poll 3 Question",
+  "options": ["Option 1", "Option 2"]
+}
+
+
+### Get All Polls
+GET http://localhost:3000/polls
+Authorization: Bearer <JWT_TOKEN>
+
+### Get Single Poll
+GET http://localhost:3000/polls/{pollId}
+Authorization: Bearer <JWT_TOKEN>
+
+### Update Poll
+PUT http://localhost:3000/polls/{pollId}
+Authorization: Bearer <JWT_TOKEN>
+Content-Type: application/json
+
+{
+  "title": "Updated Poll",
+  "description": "This is an updated poll"
+}
+
+### Soft Delete Poll
+DELETE http://localhost:3000/polls/{pollId}
+Authorization: Bearer <JWT_TOKEN>
+
+### Chat with AI
+POST http://127.0.0.1:5000/educate-chat
+Content-Type: application/json
+
+{
+    "userId" : "32deda4e-5f33-441a-b994-4d8fece711cb",
+    "query" : "Give me all the views in summary of what they talk about"
+}
+
+### Get Previous Chats
+GET http://127.0.0.1:5000/previous-chats?userId=32deda4e-5f33-441a-b994-4d8fece711cb
+
+### Chat with AI about a PDF
+POST http://127.0.0.1:5000/pdf-chat
+Content-Type: application/json
+
+{
+    "userId" : "32deda4e-5f33-441a-b994-4d8fece711cb",
+    "pdfTitle" : "Finance Bill",
+    "query" : "Explain to me in summary the ammendments regarding the alcoholic drinks act"
+}
+
+### Chat with AI about a Land Bill PDF
+POST http://127.0.0.1:5000/pdf-chat
+Content-Type: application/json
+
+{
+    "userId" : "32deda4e-5f33-441a-b994-4d8fece711cb",
+    "pdfTitle" : "Clean Code",
+    "query" : "What is this about?"
+}
+
+### Chat with AI about Conflict of interest Bill
+POST http://127.0.0.1:5000/pdf-chat
+Content-Type: application/json
+
+{
+    "userId" : "32deda4e-5f33-441a-b994-4d8fece711cb",
+    "pdfTitle" : "Conflict of Interest Bill",
+    "query" : "What is this conflict of interest bill about?"
+}
+
+######################
+# get users
+GET http://127.0.0.1:5000/users
+
+
+###################### get  a specific user
+GET http://127.0.0.1:5000/users/32deda4e-5f33-441a-b994-4d8fece711cb
+
+
+
+######################
+POST http://127.0.0.1:5000/users/add-user
+Content-Type: application/json
+
+{
+    "name" : "Mark Mende",
+    "email" : "markmende32@gmail.com",
+    "password" : "Mark17?q",
+    "role" : "citizen"
+}

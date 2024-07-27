@@ -1,0 +1,8 @@
+__pycache__
+
+.venv
+
+dist
+#can  also be recreated
+
+.env

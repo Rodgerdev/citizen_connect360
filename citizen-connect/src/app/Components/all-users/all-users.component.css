@@ -1,0 +1,58 @@
+.users-container {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-family: Roboto;
+  margin-bottom: 20px;
+  color: #F4337A;
+}
+
+.users {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.user {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+}
+
+.user img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.user h2 {
+  margin: 10px 0;
+  font-size: 1.2em;
+}
+
+.user p {
+  margin: 10px 0;
+  color: #666;
+}
+
+.user button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #F4337A;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.user button:hover {
+  background-color: #c02461;
+}

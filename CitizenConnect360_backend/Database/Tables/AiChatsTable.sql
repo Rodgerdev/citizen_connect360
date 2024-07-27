@@ -1,0 +1,9 @@
+CREATE TABLE aiChats (
+    id VARCHAR(36) PRIMARY KEY,
+    query NVARCHAR(255) NOT NULL,
+    response NVARCHAR(MAX),
+    createdAt DATETIME DEFAULT GETDATE(),
+    isDeleted INT DEFAULT 0,
+    userId VARCHAR(36) FOREIGN KEY REFERENCES Users(id),
+    updatedAt DATETIME DEFAULT GETDATE()
+)

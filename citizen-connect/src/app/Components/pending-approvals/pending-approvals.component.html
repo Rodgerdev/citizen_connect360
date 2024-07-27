@@ -1,0 +1,11 @@
+<div class="approvals-container">
+  <h1>Registered government officials pending your approval:</h1>
+  <div class="approvals">
+    <div class="approval" *ngFor="let approval of approvals">
+      <img [src]="approval.imageUrl" alt="{{ approval.name }}">
+      <h2>{{ approval.name }}</h2>
+      <p>{{ approval.email }}</p>
+      <button>Confirm</button>
+    </div>
+  </div>
+</div>

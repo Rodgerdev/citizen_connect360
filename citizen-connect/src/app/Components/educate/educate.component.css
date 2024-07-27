@@ -1,0 +1,49 @@
+.educate-container {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-family: Roboto;
+  margin-bottom: 20px;
+  color: #F4337A;
+}
+
+.documents {
+  display: flex;
+  flex-direction: column;
+}
+
+.document {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 50%;
+}
+
+.document h2 {
+  margin: 0 0 10px 0;
+}
+
+.document p {
+  margin: 0;
+  color: #666;
+}
+
+.document button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background-color: #6200ea;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.document button:hover {
+  background-color: #3700b3;
+}

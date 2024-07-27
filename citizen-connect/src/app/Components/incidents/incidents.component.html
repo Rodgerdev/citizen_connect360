@@ -1,0 +1,37 @@
+<div class="incidents-container">
+  <h1>These are the incidents posted by other citizens on the platform:</h1>
+  <div class="incidents-list">
+    <div class="incident" *ngFor="let incident of incidents$ | async">
+      <h2>{{ incident.reportedBy }}</h2>
+      <p>{{ incident.description }}</p>
+      <!-- <div *ngIf="incident.multimedia.length" class="multimedia">
+        <img *ngFor="let media of incident.multimedia" [src]="media" alt="Incident media">
+      </div> -->
+    </div>
+  </div>
+
+  <!-- Add Incident button for citizens -->
+  <button *ngIf="userRole === 'citizen'" class="add-incident-button" (click)="openAddIncidentPopup()">Add incident</button>
+
+  <!-- Summary section for government officials -->
+  <div *ngIf="userRole === 'government'" class="summary-section">
+    <button class="summarize-button" (click)="summarizeIncidents()">Summarize Incidents with AI</button>
+    <div class="summary" *ngIf="summary">
+      <h2>Incident Summary</h2>
+      <p>{{ summary }}</p>
+    </div>
+  </div>
+
+  <!-- Add Incident Popup -->
+  <div *ngIf="showAddIncidentPopup" class="popup">
+    <div class="popup-content">
+      <h2>Add Incident</h2>
+      <label for="description">Description:</label>
+      <textarea id="description" [(ngModel)]="newIncident.description"></textarea>
+      <label for="multimedia">Multimedia:</label>
+      <input type="file" id="multimedia" (change)="onFileChange($event)" multiple>
+      <button (click)="submitIncident()">Submit</button>
+      <button (click)="closeAddIncidentPopup()">Close</button>
+    </div>
+  </div>
+</div>
